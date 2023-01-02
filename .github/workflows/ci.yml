@@ -21,7 +21,7 @@ jobs:
     - name: Compile
       run: npm run compile
     - name: Build application
-      run: npm run build
+      run: npm run local
     - name: Run tests
       run: npm run devmatch-test
     - uses: actions/upload-artifact@v3
