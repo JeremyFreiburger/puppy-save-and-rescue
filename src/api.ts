@@ -137,7 +137,7 @@ export const getLostPets = ((async (event) => {
     let db = await init();
 
     // Find the pets without an owner
-    const result = db.prepare(`SELECT p.* FROM pets p LEFT JOIN owners_pets op ON p.id = op.pet_id WHERE op.pet_id IS NULL`);
+    const result = db.exec(`SELECT p.* FROM pets p LEFT JOIN owners_pets op ON p.id = op.pet_id WHERE op.pet_id IS NULL`);
 
     // Formatted the results
     const formattedResults = serialize(result);

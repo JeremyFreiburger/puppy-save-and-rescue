@@ -20,10 +20,11 @@ jobs:
       run: npm ci
     - name: Compile
       run: npm run compile
-    - name: Build application
-      run: npm run local
     - name: Run tests
       run: npm run devmatch-test
+    - name: Build application
+      run: npm run local
+
     - uses: actions/upload-artifact@v3
       if: always()
       with:
